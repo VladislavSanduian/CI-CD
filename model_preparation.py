@@ -43,9 +43,6 @@ def process_files_in_train_folder():
         # Обучение модели ARIMA
         arima_model = train_arima_model(train_data_file)
 
-        # Визуализация предсказаний на обучающих данных
-        plot_predictions(arima_model, pd.read_csv(train_data_file))
-
 def main():
     # Обработка всех файлов в папке "train"
     process_files_in_train_folder()
