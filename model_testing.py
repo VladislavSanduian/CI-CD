@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from statsmodels.tsa.arima.model import ARIMA
 from sklearn.metrics import mean_squared_error, mean_absolute_error
-from model_preparation import train_arima_model, plot_predictions
+from model_preparation import train_arima_model
 
 def test_arima_model(model, test_data_path):
     # Загрузка тестовых данных
@@ -18,9 +18,6 @@ def test_arima_model(model, test_data_path):
 
     # Построение предсказаний модели ARIMA
     predictions = model.predict(start=0, end=len(test_series)-1)
-
-    # Визуализация данных и предсказаний
-    plot_predictions(model, test_data, title="ARIMA Model Predictions on Test Data")
 
     # Вычисление метрик
     mse = mean_squared_error(test_series, predictions)
