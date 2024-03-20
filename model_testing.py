@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from statsmodels.tsa.arima.model import ARIMA
 from sklearn.metrics import mean_squared_error, mean_absolute_error
-from model_preparation import train_arima_model, plot_predictions
+from model_preparation import train_arima_model
 
 def test_arima_model(model, test_data_path):
     # Загрузка тестовых данных
