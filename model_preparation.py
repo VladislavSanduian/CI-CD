@@ -22,19 +22,6 @@ def train_arima_model(data_path, order=(1, 0, 1)):
 
     return fitted_model
 
-def plot_predictions(model, data, title="ARIMA Model Predictions"):
-    # Построение предсказаний модели
-    predictions = model.predict(start=0, end=len(data)-1)
-
-    # Визуализация данных и предсказаний
-    plt.plot(data.index, data[data.columns[1]], label='Actual Data')  # Выберите второй столбец (индекс 1), содержащий временной ряд
-    plt.plot(data.index, predictions, label='ARIMA Predictions')
-    plt.title(title)
-    plt.xlabel('Time')
-    plt.ylabel('Price')
-    plt.legend()
-    plt.show()
-
 def process_files_in_train_folder():
     # Получение текущей директории
     current_directory = os.getcwd()
