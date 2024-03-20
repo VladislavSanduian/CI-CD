@@ -19,9 +19,6 @@ def test_arima_model(model, test_data_path):
     # Построение предсказаний модели ARIMA
     predictions = model.predict(start=0, end=len(test_series)-1)
 
-    # Визуализация данных и предсказаний
-    plot_predictions(model, test_data, title="ARIMA Model Predictions on Test Data")
-
     # Вычисление метрик
     mse = mean_squared_error(test_series, predictions)
     mae = mean_absolute_error(test_series, predictions)
